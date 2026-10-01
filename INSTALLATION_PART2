@@ -1,0 +1,68 @@
+
+
+ _   _ _   _  ____ _____  __        ___    ____  _   _ 
+| | | | | | |/ ___| ____| \ \      / / \  |  _ \| \ | |
+| |_| | | | | |  _|  _|    \ \ /\ / / _ \ | |_) |  \| |
+|  _  | |_| | |_| | |___    \ V  V / ___ \|  _ <| |\  |
+|_| |_|\___/ \____|_____|    \_/\_/_/   \_\_| \_\_| \_|
+
+
+  Note: replace /dev/sdX with your actual disk
+  (e.g. /dev/sda, /dev/nvme0n1).
+
+  WARN!!! Choosing the wrong disk will destroy your data.
+  You are responsible for your own actions.
+  The author takes no responsibility for any damage.
+
+
+
+
+
+Welcome to INSTALLATION_PART2.
+
+Here you will find the steps to deploy C0rewing
+to your drive and boot it.
+
+Read carefully before proceeding.
+
+---------------------------------------------------Basic Installation-------------------------------------------------------------
+ Download the ROOT-FS archive from the c0rewing repository.
+ WARN - only x86_64.
+ Format the disk where you will install it.
+
+ WARN!!! This will erase all data on the target disk.
+
+ Commands:
+   lsblk
+   sudo mkfs.ext4 /dev/sdX
+
+Mount the disk and deploy the rootfs.
+
+ Commands:
+  sudo mkdir -p /mnt/c0rewing
+  sudo mount /dev/sdX /mnt/c0rewing
+  sudo tar -xvf rootfs.tar.gz -C /mnt/c0rewing
+Install GRUB.
+
+Commands:
+  sudo grub-install --boot-directory=/mnt/c0rewing/boot /dev/sdX
+
+After GRUB is installed:
+
+  Commands:
+    sync
+    sudo umount /mnt/c0rewing
+
+  Reboot and select the target disk in your BIOS/UEFI boot menu.
+
+  Commands:
+    sudo reboot
+
+  On first boot, log in as root / root and change the password immediately.
+
+  Commands:
+    passwd
+
+  Congratulations! You have successfully installed C0rewing.
+
+  Proceed to USING_PART3 for extra information.
