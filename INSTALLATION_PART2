@@ -1,5 +1,3 @@
-
-
  _   _ _   _  ____ _____  __        ___    ____  _   _ 
 | | | | | | |/ ___| ____| \ \      / / \  |  _ \| \ | |
 | |_| | | | | |  _|  _|    \ \ /\ / / _ \ | |_) |  \| |
@@ -15,9 +13,6 @@
   The author takes no responsibility for any damage.
 
 
-
-
-
 Welcome to INSTALLATION_PART2.
 
 Here you will find the steps to deploy C0rewing
@@ -25,29 +20,32 @@ to your drive and boot it.
 
 Read carefully before proceeding.
 
----------------------------------------------------Basic Installation-------------------------------------------------------------
- Download the ROOT-FS archive from the c0rewing repository.
- WARN - only x86_64.
- Format the disk where you will install it.
+---------------- Basic Installation ----------------
 
- WARN!!! This will erase all data on the target disk.
+  Download the ROOT-FS archive from the c0rewing repository.
+  WARN - only x86_64.
 
- Commands:
-   lsblk
-   sudo mkfs.ext4 /dev/sdX
+  Format the disk where you will install it.
+  WARN!!! This will erase all data on the target disk.
 
-Mount the disk and deploy the rootfs.
+  Commands:
+    lsblk
+    sudo mkfs.ext4 /dev/sdX
 
- Commands:
-  sudo mkdir -p /mnt/c0rewing
-  sudo mount /dev/sdX /mnt/c0rewing
-  sudo tar -xvf rootfs.tar.gz -C /mnt/c0rewing
-Install GRUB.
+  Mount the disk and deploy the rootfs.
 
-Commands:
-  sudo grub-install --boot-directory=/mnt/c0rewing/boot /dev/sdX
+  Commands:
+    sudo mkdir -p /mnt/c0rewing
+    sudo mount /dev/sdX /mnt/c0rewing
+    sudo tar -xvf rootfs.tar.gz -C /mnt/c0rewing
+    sync
 
-After GRUB is installed:
+  Install GRUB.
+
+  Commands:
+    sudo grub-install --boot-directory=/mnt/c0rewing/boot /dev/sdX
+
+  After GRUB is installed:
 
   Commands:
     sync
@@ -65,4 +63,4 @@ After GRUB is installed:
 
   Congratulations! You have successfully installed C0rewing.
 
-  Proceed to USING_PART3 for extra information.
+  Proceed to USING_PART3 for basic usage and tips.
