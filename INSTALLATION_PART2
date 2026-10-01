@@ -61,6 +61,29 @@ Read carefully before proceeding.
   Commands:
     passwd
 
+---------------- Configure fstab ----------------
+
+  Before rebooting, you need to create /etc/fstab
+  so the system knows what to mount at boot.
+
+  Find the UUID of your disk:
+
+    blkid /dev/sdX
+
+  Create /etc/fstab inside the mounted rootfs:
+
+    sudo nano /mnt/c0rewing/etc/fstab
+
+  Example:
+
+    # <file system> <mount point> <type> <options> <dump> <pass>
+    UUID=xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx  /      ext4  defaults  0  1
+
+  Replace the UUID with the one from blkid.
+  Replace ext4 with your filesystem type if different.
+
+  WARN!!! A wrong fstab will prevent the system from booting.
+
   Congratulations! You have successfully installed C0rewing.
 
   Proceed to USING_PART3 for basic usage and tips.
