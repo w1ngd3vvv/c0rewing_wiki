@@ -28,19 +28,6 @@ Here you will find basic usage information for C0rewing.
 
     dhcpcd
 
----------------- Desktop ----------------
-
-  C0rewing uses Fluxbox as its window manager.
-
-  Xorg starts automatically on boot via xinit.
-
-  Default Fluxbox menu: right-click on the desktop.
-
-  Fluxbox config: /root/.fluxbox/
-
-  To start X manually (if it is not running):
-
-    startx
 
 
 ---------------- Terminal ----------------
