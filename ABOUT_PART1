@@ -1,0 +1,14 @@
+                                                      +-------+
+                                                      | ABOUT |
+                                                      +-------+
+C0rewing is a fully minimal system. It contains only the basic set of utilities for use.
+Pros:
+ - Internet drivers are already included
+ - i915 is present
+
+Cons:
+ - only in 1.0
+ - drivers are currently only for i915
+
+If you are interested, go to the INSTALLATION_PART2 file.
+See you later!
