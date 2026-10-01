@@ -28,15 +28,6 @@ Here you will find basic usage information for C0rewing.
 
     dhcpcd
 
-  To start it automatically on boot:
-
-    /etc/init.d/dhcpcd start
-    update-rc.d dhcpcd defaults
-
-  If you need to configure Wi-Fi, use:
-
-    iwctl
-
 ---------------- Desktop ----------------
 
   C0rewing uses Fluxbox as its window manager.
