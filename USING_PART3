@@ -1,0 +1,100 @@
+Welcome to USING_PART3.
+
+Here you will find basic usage information for C0rewing.
+
+---------------- First Login ----------------
+
+  Log in as root / root.
+
+  Change the password immediately:
+
+    passwd
+
+  Add a regular user (recommended):
+
+    useradd -m -G wheel -s /bin/bash username
+    passwd username
+
+---------------- Network ----------------
+
+  Internet drivers are included out of the box.
+
+  Check your connection:
+
+    ip a
+    ping -c 3 1.1.1.1
+
+  If you do not have an IP address, you may need to start DHCP manually:
+
+    dhcpcd
+
+  To start it automatically on boot:
+
+    /etc/init.d/dhcpcd start
+    update-rc.d dhcpcd defaults
+
+  If you need to configure Wi-Fi, use:
+
+    iwctl
+
+---------------- Desktop ----------------
+
+  C0rewing uses Fluxbox as its window manager.
+
+  Xorg starts automatically on boot via xinit.
+
+  Default Fluxbox menu: right-click on the desktop.
+
+  Fluxbox config: /root/.fluxbox/
+
+  To start X manually (if it is not running):
+
+    startx
+
+
+---------------- Terminal ----------------
+
+  tmux is pre-installed for terminal multiplexing.
+
+  htop is available for process monitoring.
+
+  fastfetch shows system information.
+
+---------------- Easter Eggs ----------------
+
+  cmatrix - digital rain effect.
+  aafire  - ASCII art burning fire.
+
+  Just run them in the terminal.
+
+---------------- Troubleshooting ----------------
+
+  If the system fails to boot:
+
+    - Check GRUB installation.
+    - Verify the disk is selected in BIOS/UEFI.
+    - Reinstall rootfs if necessary.
+
+  If Xorg fails to start:
+
+    - Check /var/log/Xorg.0.log
+    - Verify i915 driver is loaded: lsmod | grep i915
+
+  If you have no internet:
+
+    - Run dhcpcd manually.
+    - Check that the interface is up: ip link set eth0 up
+
+---------------- Notes ----------------
+
+  C0rewing is a minimal system.
+  It contains only the basic set of utilities.
+
+  Drivers are currently only for i915 (Intel HD Graphics).
+  Other hardware may require kernel recompilation.
+
+  Some test files may remain in the rootfs.
+  They can be safely deleted.
+
+  For more information, see the repository:
+  https://github.com/w1ngd3vvv/c0rewing
